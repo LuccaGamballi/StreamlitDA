@@ -46,13 +46,10 @@ if month != None and year != None:
     df_filtered = df[(df["chart_week"].dt.year == year) & 
                      (df["chart_week"].dt.month == month)]
     
-    # Remove duplicates based on title, keeping the first occurrence (highest position)
     df_filtered = df_filtered.drop_duplicates(subset=['title'])
     
-    # Sort by current_week and take top 3
     df_filtered = df_filtered.sort_values('current_week').head(3)
     
-    # Display the results in a more readable format
     if not df_filtered.empty:
         st.write(f"Top 3 songs for {month}/{year}:")
         for i, (_, row) in enumerate(df_filtered.iterrows()):
@@ -63,12 +60,9 @@ if month != None and year != None:
                 spotify_embed = f'<iframe style="border-radius:16px" src="https://open.spotify.com/embed/track/{spotify_id}" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
                 st.markdown(spotify_embed, unsafe_allow_html=True)
             else:
-                # Clean up the song title
-                # Remove features, special characters, and parentheses content
                 clean_title = re.sub(r'\(feat.*?\)|\(ft.*?\)|\(with.*?\)|\([^)]*\)', '', row['title'])
                 clean_title = re.sub(r'[^\w\s]', '', clean_title).strip()
                 
-                # Search for the song on Spotify using only the title
                 search_query = f"track:{clean_title}"
                 results = sp.search(q=search_query, type='track', limit=1)
                 
