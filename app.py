@@ -39,7 +39,7 @@ with col1:
 
 with col2:
     year = st.selectbox('Ano',
-                        options=range(1958, 2025))
+                        options=range(1958, 2026))
 
 if month != None and year != None:
     df["chart_week"] = pd.to_datetime(df["chart_week"])
