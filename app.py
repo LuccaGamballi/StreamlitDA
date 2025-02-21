@@ -51,7 +51,7 @@ if month != None and year != None:
     df_filtered = df_filtered.sort_values('current_week').head(3)
     
     if not df_filtered.empty:
-        st.write(f"Top 3 songs for {month}/{year}:")
+        st.write(f"Top 3 Billboard para {month}/{year}:")
         for i, (_, row) in enumerate(df_filtered.iterrows()):
             st.write(f"#{i+1}: {row['title']} - {row['performer']}")
             # Convert spotify link to embed format
