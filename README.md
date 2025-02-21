@@ -19,3 +19,6 @@ E então executar o arquivo app.py.
 ```bash
 streamlit run app.py
 ```
+Por fim, basta escolher o mês e o ano para ouvir as músicas que estavam no top 3 da Billboard naquele mês.
+
+![image](image.png)
