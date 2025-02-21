@@ -2,6 +2,10 @@
 
 Desafio Acelerado Minerva
 
+O arquivo app.py é o arquivo principal do projeto. Ele executa a aplicação Streamlit.
+
+O arquivo `getLinks.py` é responsável por enriquecer os dados do dataset, utilizando a API do Spotify para obter os links de cada música. Ele processa o arquivo `hot-100-current_Filtered.csv` e gera como saída o arquivo `music_with_spotify_links.csv` com os links correspondentes.
+
 Para executar o projeto, é necessário credenciais do Spotify Developer.
 
 Podem ser obtidas em: https://developer.spotify.com/dashboard/applications

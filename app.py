@@ -12,7 +12,7 @@ client_credentials_manager = SpotifyClientCredentials(client_id=client_id, clien
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 
-df_original = pd.read_csv('C:\\Users\\lucca\\Desktop\\StreamlitDA\\hot-100-current _Filtered.csv')  
+df_original = pd.read_csv('hot-100-current_Filtered.csv')  
 
 df = pd.read_csv('music_with_spotify_links.csv')
 
@@ -71,9 +71,9 @@ if month != None and year != None:
                     spotify_embed = f'<iframe style="border-radius:16px" src="https://open.spotify.com/embed/track/{spotify_id}" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
                     st.markdown(spotify_embed, unsafe_allow_html=True)
                 else:
-                    st.write("No Spotify link available for this song")
+                    st.write("Não há link disponível para esta música")
     else:
-        st.write("No songs found for this period.")
+        st.write("Não há músicas encontradas para este período.")
 
 
 
